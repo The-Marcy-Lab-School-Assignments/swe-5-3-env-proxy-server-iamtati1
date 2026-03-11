@@ -20,3 +20,4 @@ export const renderError = (message) => {
   errorEl.textContent = message;
   errorEl.classList.remove('hidden');
 };
+//yo
