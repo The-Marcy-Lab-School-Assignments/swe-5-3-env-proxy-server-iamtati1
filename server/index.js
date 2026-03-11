@@ -17,7 +17,8 @@ const pathToFrontend = path.join(__dirname, '../frontend');
 const app = express();
 
 function getGifs(req, res, next) {
-    fetch("https://api.giphy.com/v1/gifs/trending?limit=3&rating=g&api_key=9q65JJFPUpJYhCd3WSSzeju5aDxacYol")
+    fetch(`https://api.giphy.com/v1/gifs/search?q=cat&api_key=${apiKey}`)
+
         .then((response) => response.json())
         .then(data => res.json(data))
         .catch((error) => {
