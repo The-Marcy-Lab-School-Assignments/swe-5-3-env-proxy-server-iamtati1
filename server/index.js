@@ -1,10 +1,10 @@
 //////////////////////////
 // Imports
 //////////////////////////
+require('dotenv').config();
 const fetch = require("node-fetch").default;
 const path = require('path');
 const express = require('express');
-require('dotenv').config();
 
 const apiKey = process.env.GIPHY_API_KEY;
 console.log(apiKey);
