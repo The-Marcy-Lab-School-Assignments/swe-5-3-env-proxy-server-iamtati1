@@ -1,10 +1,13 @@
 //////////////////////////
 // Imports
 //////////////////////////
-
+require('dotenv').config();
+const fetch = require("node-fetch").default;
 const path = require('path');
 const express = require('express');
 
+const apiKey = process.env.GIPHY_API_KEY;
+console.log(apiKey);
 //////////////////////////
 // Constants
 //////////////////////////
@@ -13,6 +16,18 @@ const port = 8080;
 const pathToFrontend = path.join(__dirname, '../frontend');
 const app = express();
 
+const getGifs = (req, res, next) => {
+    fetch(`https://api.giphy.com/v1/gifs/search?q=cat&api_key=${apiKey}`)
+
+        .then((response) => response.json())
+        .then(data => res.json(data))
+        .catch((error) => {
+            console.log("FETCH ERROR:", error);
+            res.status(503).json({ error: "Error fetching gifs" });
+        });
+}
+// Function gets list of GIFS
+app.get('/api/gifs', getGifs); // This registers the API endpoint
 //////////////////////////
 // Middleware/Controllers
 //////////////////////////

@@ -1,6 +1,6 @@
 # Securing API Keys
 
-Deployment Link: <<<<<< PUT YOUR DEPLOYMENT LINK HERE >>>>>>
+Deployment Link: <<<<<< https://swe-5-3-env-proxy-server-iamtati1.onrender.com >>>>>>
 
 In this assignment, you will be given a working frontend application that attempts to fetch gifs. You'll use Express as a middleman for API requests, allowing us to deploy the project while keeping the API key secure.
 
@@ -53,9 +53,9 @@ Before submitting, make sure that these tasks are completed!
 
 **Server-Side Technical Requirements**
 
-- [ ] A `GET /api/gifs` endpoint exists with a controller.
-- [ ] The controller for the `/api/gifs` endpoint sends a request to the Giphy API using the API key.
-- [ ] If an error occurs when fetching, a `503` status is sent to the client along with the `error` object.
+- [x] A `GET /api/gifs` endpoint exists with a controller.
+- [x] The controller for the `/api/gifs` endpoint sends a request to the Giphy API using the API key.
+- [x] If an error occurs when fetching, a `503` status is sent to the client along with the `error` object.
 - [ ] If the Giphy API fetch is successful, the fetched data is sent to the client.
 - [ ] The `/api/gifs` endpoint can parse the `req.query` parameters to get the search term and make a request to the Giphy API's search endpoint.
 
